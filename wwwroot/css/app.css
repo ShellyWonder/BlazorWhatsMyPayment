@@ -4,7 +4,7 @@
     --sjw-font-size: 1.1rem;
     --sjw-title-color: var(--sjw-dark-color);
 }
-.logFont {
+.logoFont {
     font-family: "Anton SC", sans-serif;
     font-weight: 400;
     font-style: normal;

@@ -7,13 +7,13 @@
 
 .title {
     font-family: var(--sjw-title-font);
-    font-size: 3rem;
+    font-size: 2.25rem;
     color: var(--sjw-title-color);
     line-height: 3rem;
 }
 
 .subTitle {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-family: var(--sjw-body-font);
 }
 
