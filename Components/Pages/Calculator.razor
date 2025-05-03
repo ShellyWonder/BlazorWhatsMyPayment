@@ -115,7 +115,7 @@
     }
     private void HandleSubmit()
     {
-        loan.Payment= LoanUtils.CalcPayment(loan.PurchaseAmount, loan.Rate, loan.Term);
-        editContext?.NotifyValidationStateChanged();
+        loan = LoanUtils.GetPayments(loan);
+       
     }
 }
