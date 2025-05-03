@@ -1,0 +1,132 @@
+﻿/*Calculator.razor.css*/
+.instructions-container {
+    border-left: 4px solid var(--sjw-theme-700);
+    background: linear-gradient( to right, rgba(var(--bs-success-rgb), 0.02) 0%, rgba(var(--bs-success-rgb), 0.05) 50%, rgba(var(--bs-success-rgb), 0.02) 100% );
+    backdrop-filter: blur(1px);
+}
+
+.lead {
+    font-size: 1.1rem;
+    color: var(--bs-gray-800);
+}
+/*#region list-group animations & styles*/
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.list-group-item {
+    animation: fadeInUp 0.5s ease-out forwards;
+    opacity: 0;
+    border-left: none;
+    border-right: none;
+    padding: 0.75rem 0;
+    transition: all 0.3s ease;
+}
+
+.list-group-item:hover {
+    transform: translateX(5px);
+}
+
+    .list-group-item:first-child {
+        border-top: none;
+    }
+
+    .list-group-item:last-child {
+        border-bottom: none;
+    }
+
+    /* Staggered animations */
+    .list-group-item:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+
+    .list-group-item:nth-child(2) {
+        animation-delay: 0.3s;
+    }
+
+    .list-group-item:nth-child(3) {
+        animation-delay: 0.5s;
+    }
+
+    .list-group-item .bi {
+        vertical-align: middle;
+        font-size: 1.1em; /* Slightly larger if desired */
+    }
+    /* If you need micro-adjustment */
+    .list-group-item .bi-1-circle-fill,
+    .list-group-item .bi-2-circle-fill,
+    .list-group-item .bi-3-circle-fill {
+        margin-top: -1px; /* Adjust this value as needed */
+    }
+/*#endregion list-group animations & styles*/
+
+/*#region form styles*/
+.loanForm {
+    background-color: var(--bs-success-bg-subtle);
+    border: solid 4px var(--bs-success-bg);
+}
+
+    .loanForm input {
+        width: 100%;
+        padding: 0.5rem;
+    }
+.paymentTitle {
+    text-align: center;
+    margin-top: 4px;
+}
+
+.payment {
+    text-align: center;
+    font-weight:800;
+}
+
+.totalCost {
+
+    font-weight: 600;
+}
+/*#endregion form styles*/
+
+/*#region alert box*/
+.alert-success {
+    border-left: 4px solid var(--bs-success);
+    background-color: rgba(var(--bs-success-rgb), 0.1);
+    animation: pulse 2s ease-in-out 2;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(var(--bs-success-rgb), 0.2);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(var(--bs-success-rgb), 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(var(--bs-success-rgb), 0);
+    }
+}
+/*#endregion alert box*/
+
+/*#region icon hover effects*/
+.bi-1-circle-fill,
+.bi-2-circle-fill,
+.bi-3-circle-fill {
+    transition: all 0.3s ease;
+    padding-left: 8px;
+}
+
+.list-group-item:hover .bi-1-circle-fill,
+.list-group-item:hover .bi-2-circle-fill,
+.list-group-item:hover .bi-3-circle-fill {
+    transform: scale(1.1);
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+/*#endregion icon hover effects*/
