@@ -57,13 +57,13 @@
 
     .list-group-item .bi {
         vertical-align: middle;
-        font-size: 1.1em; /* Slightly larger if desired */
+        font-size: 1em; /* Slightly larger if desired */
     }
     /* If you need micro-adjustment */
     .list-group-item .bi-1-circle-fill,
     .list-group-item .bi-2-circle-fill,
     .list-group-item .bi-3-circle-fill {
-        margin-top: -1px; /* Adjust this value as needed */
+        margin-top: -4px; /* Adjust this value as needed */
     }
 /*#endregion list-group animations & styles*/
 

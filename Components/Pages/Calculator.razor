@@ -39,7 +39,7 @@
         <div class="row">
             <div class="col-12 col-md-6 loanForm p-2 rounded-3">
                 <h4 class="mt-4">Loan Calculator</h4>
-                <EditForm EditContext="editContext">
+                <EditForm EditContext="editContext"OnValidSubmit="HandleSubmit">
                     <DataAnnotationsValidator />
                     <ValidationSummary />
                     <div class="row gy-2">
@@ -97,7 +97,6 @@
 
                 </div>
             </div>
-
         </div>
     </div>
 </div>
@@ -114,5 +113,9 @@
         loan.Term = 5;
         loan.Rate = 5.0;
     }
-
+    private void HandleSubmit()
+    {
+        loan.Payment= LoanUtils.CalcPayment(loan.PurchaseAmount, loan.Rate, loan.Term);
+        editContext?.NotifyValidationStateChanged();
+    }
 }
