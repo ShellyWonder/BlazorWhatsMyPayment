@@ -1,3 +1,5 @@
+/*app.css global*/
+
 :root {
     --sjw-title-font: 'Bebas Neue', sans-serif;
     --sjw-body-font: 'Montserrat', sans-serif;
@@ -33,6 +35,53 @@ h1, h2, h3, h4, h5, h6 {
 #app {
     height: 100%;
 }
+/*#region print media query*/
+/*@media print {
+    body {
+        margin: 0;
+        padding: 0;
+        font-size: 12pt;
+    }
+
+    .table-responsive {
+        overflow: visible !important;
+    }
+
+    .btn,
+    .no-print {
+        display: none !important;
+    }
+
+    .payment-schedule-table {
+        width: 100% !important;
+        border-collapse: collapse;
+        table-layout: auto;
+    }
+
+        .payment-schedule-table th,
+        .payment-schedule-table td {
+            padding: 6px 8px;
+            border: 1px solid #ccc;
+            word-break: break-word;
+            white-space: normal !important;
+            font-size: 11pt;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+    .payment-schedule-container {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    @page {
+        size: landscape;
+        margin: 0.5in;
+    }
+}*/
+
+/*#endregion print media query*/
 
 /* #region Blazor default CSS */
 

@@ -1,0 +1,54 @@
+﻿/* PaymentSchedule.razor.css */
+@media print {
+    .payment-schedule-root {
+        font-size: 12pt;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .table-responsive {
+        overflow: visible !important;
+        width: 100% !important;
+        margin: 0;
+        padding: 0;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+    .mt-1.border.border-1.p-4 { /* Target the container */
+        border: none !important; /* Remove the border */
+        padding: 0 !important; 
+    }
+
+    .payment-schedule-table {
+        width: 100% !important;
+        border-collapse: collapse;
+        table-layout: auto;
+        margin: 0;
+        padding: 0;
+    }
+
+        .payment-schedule-table th,
+        .payment-schedule-table td {
+            padding: 1px 1px;
+            border: 1px solid #ccc;
+            word-break: break-word;
+            white-space: normal !important;
+            font-size: 10pt;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+    .payment-schedule-container {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    @page {
+        size: landscape;
+        margin: 0.5in;
+    }
+}

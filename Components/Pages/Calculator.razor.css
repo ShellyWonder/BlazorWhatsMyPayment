@@ -130,3 +130,21 @@
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
 /*#endregion icon hover effects*/
+
+/*#region media print query*/
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    .btn .no-print {
+        display: none !important;
+    }
+    .instructions-container .no-print {
+        display: none !important;
+    }
+    .loanForm .no-print {
+        display: none !important;
+    }
+
+    /*#endregion media print query*/
+}

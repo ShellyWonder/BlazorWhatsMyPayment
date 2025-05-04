@@ -1,10 +1,10 @@
-﻿@* Calculator *@
+﻿@* Calculator Component - parent to PaymentSchedule Component *@
 @page "/calculator"
 <div class="container-xxl my-3">
     <h1 class="mb-2 text-center logFont">What's My Payment?</h1>
     <div>
         @* Instructions *@
-        <div class="instructions-container rounded-4 p-4 mb-4 shadow-sm">
+        <div class="instructions-container no-print rounded-4 p-4 mb-4 shadow-sm">
             <h4 class="mb-3 text-center fw-bold text-black">How It Works</h4>
             <p class="lead">
                 Take the guesswork out of loan planning. This loan calculator helps you explore different loan scenarios before ever speaking with a lender.
@@ -37,7 +37,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-md-6 loanForm p-2 rounded-3">
+            <div class="col-12 col-md-6 loanForm no-print p-2 rounded-3">
                 <h4 class="mt-4">Loan Calculator</h4>
                 <EditForm EditContext="editContext" OnValidSubmit="HandleSubmit">
                     <DataAnnotationsValidator />
@@ -60,7 +60,7 @@
                             <ValidationMessage For="@(() => loan.Rate)" />
                         </div>
                         <div class="text-end">
-                            <button type="submit" class="btn btn-primary mt-3"><i class="bi bi-calculator-fill me-2"></i>Calculate</button>
+                            <button type="submit" class="btn btn-primary mt-3"><i class="bi bi-calculator-fill me-2"></i>Calculate Loan</button>
                         </div>
                     </div>
                 </EditForm>
@@ -93,18 +93,13 @@
                     </div>
                 </div>
                 <div class="text-end mt-2">
-                    <button class="btn btn-primary" @onclick="ShowScheduleToggle"><i class="bi bi-calendar2-check me-2"></i>@buttonText</button>
+                    <button class="btn btn-primary no-print" @onclick="ShowScheduleToggle"><i class="bi bi-calendar2-check me-2"></i>@buttonText</button>
 
                 </div>
             </div>
             @if (showSchedule)
             {
                 <div class="col-12 mt-3">
-                    @* <div id="printSection" class="d-none text-end mb-4">
-                        <button class="btn btn-outline-dark" onclick="window.print()">
-                            <i class="bi bi-printer"></i> Print Schedule
-                        </button>
-                    </div> *@
                     <div class="container my-4">
                         <PaymentSchedule Payments="loan.Payments" />
                     </div>

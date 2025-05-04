@@ -1,34 +1,44 @@
-﻿<h2 class="mb-1">Payment Schedule</h2>
+﻿@* PaymentSchedule Component *@
+@inject IJSRuntime JS
+
+<h2 class="mb-1">Payment Schedule</h2>
 
 <div class="mt-1 border border-1 p-4">
     @if (Payments.Count > 0)
     {
-        <div class="table-responsive">
-            <table class="table table-striped table-hover">
-                <thead class="table-success">
-                    <tr>
-                        <th class="ps-5">Month</th>
-                        <th>Payment</th>
-                        <th>Principal</th>
-                        <th>Interest</th>
-                        <th>Total Interest</th>
-                        <th>Balance</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var payment in Payments)
-                    {
+        <div class="text-end mb-4">
+            <button class="btn btn-outline-dark no-print" @onclick="PrintSchedule">
+                <i class="bi bi-printer"></i> Print Schedule
+            </button>
+        </div>
+        <div class="payment-schedule-container">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover payment-schedule-table">
+                    <thead class="table-success">
                         <tr>
-                            <td>@payment.Month</td>
-                            <td>@payment.Payment.ToString("C2")</td>
-                            <td>@payment.MonthlyPrincipal.ToString("C2")</td>
-                            <td>@payment.MonthlyInterest.ToString("C2")</td>
-                            <td>@payment.TotalInterest.ToString("C2")</td>
-                            <td>@payment.Balance.ToString("C2")</td>
+                            <th>Month</th>
+                            <th>Payment</th>
+                            <th>Principal</th>
+                            <th>Interest</th>
+                            <th>Total Interest</th>
+                            <th>Balance</th>
                         </tr>
-                    }
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach (var payment in Payments)
+                        {
+                            <tr>
+                                <td>@payment.Month</td>
+                                <td>@payment.Payment.ToString("C2")</td>
+                                <td>@payment.MonthlyPrincipal.ToString("C2")</td>
+                                <td>@payment.MonthlyInterest.ToString("C2")</td>
+                                <td>@payment.TotalInterest.ToString("C2")</td>
+                                <td>@payment.Balance.ToString("C2")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     }
     else
@@ -38,11 +48,11 @@
         </div>
     }
 
-
-
-
 </div>
 @code {
     [Parameter, EditorRequired]
     public List<LoanPayment> Payments { get; set; } = new List<LoanPayment>();
+
+    private async Task PrintSchedule() => await JS.InvokeVoidAsync("window.print");
+
 }
