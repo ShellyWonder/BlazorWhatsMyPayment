@@ -1,13 +1,13 @@
 ﻿@* PaymentSchedule Component *@
 @inject IJSRuntime JS
 
-<h2 class="mb-1">Payment Schedule</h2>
 
+<h2>Payment Schedule</h2>
 <div class="mt-1 border border-1 p-4">
     @if (Payments.Count > 0)
     {
         <div class="text-end mb-4">
-            <button class="btn btn-outline-dark no-print" @onclick="PrintSchedule">
+            <button class="btn btn-primary no-print" @onclick="PrintSchedule">
                 <i class="bi bi-printer"></i> Print Schedule
             </button>
         </div>
