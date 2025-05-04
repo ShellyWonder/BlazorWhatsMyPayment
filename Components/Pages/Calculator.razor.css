@@ -6,7 +6,7 @@
 }
 
 .lead {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--bs-gray-800);
 }
 /*#region list-group animations & styles*/
@@ -21,6 +21,7 @@
         transform: translateY(0);
     }
 }
+
 .list-group-item {
     animation: fadeInUp 0.5s ease-out forwards;
     opacity: 0;
@@ -30,9 +31,9 @@
     transition: all 0.3s ease;
 }
 
-.list-group-item:hover {
-    transform: translateX(5px);
-}
+    .list-group-item:hover {
+        transform: translateX(5px);
+    }
 
     .list-group-item:first-child {
         border-top: none;
@@ -71,12 +72,14 @@
 .loanForm {
     background-color: var(--bs-success-bg-subtle);
     border: solid 4px var(--bs-success-bg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Horizontal | Vertical | Blur | Spread | Color */
 }
 
     .loanForm input {
         width: 100%;
         padding: 0.5rem;
     }
+
 .paymentTitle {
     text-align: center;
     margin-top: 4px;
@@ -84,11 +87,10 @@
 
 .payment {
     text-align: center;
-    font-weight:800;
+    font-weight: 800;
 }
 
 .totalCost {
-
     font-weight: 600;
 }
 /*#endregion form styles*/
@@ -135,6 +137,7 @@
 .fade-in {
     animation: fadeIn 1s;
 }
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -153,12 +156,15 @@
     .no-print {
         display: none !important;
     }
+
     .btn .no-print {
         display: none !important;
     }
+
     .instructions-container .no-print {
         display: none !important;
     }
+
     .loanForm .no-print {
         display: none !important;
     }
